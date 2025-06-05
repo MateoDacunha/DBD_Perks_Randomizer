@@ -8,13 +8,18 @@ public class CSVReader{
     Scanner scanner;
     private boolean isSurv;
     private int NBPERKS;
+    private int NBTYPEOFPERKS;
 
     CSVReader(String filename,boolean isSurv){
         this.isSurv = isSurv;
-        if (isSurv)
+        if (isSurv){
             NBPERKS = 152;
-        else
-            NBPERKS = 999;
+            NBTYPEOFPERKS = 9;
+        }
+        else{
+            NBPERKS = 133;
+            NBTYPEOFPERKS = 8;
+        }
         try {
             scanner = new Scanner(new File(filename));
             scanner.useDelimiter("[\\n]");
@@ -43,7 +48,7 @@ public class CSVReader{
                 name = tab[0];
                 character = tab[1];
 
-                for (i = 0;i<7;i++){
+                for (i = 0;i<NBTYPEOFPERKS;i++){
                     if (tab[2+i].equals("TRUE")){
                         tag += Math.pow(2,i);
                     }
@@ -56,6 +61,7 @@ public class CSVReader{
             System.out.println(e);
             return null;
         }
+        scanner.close();
         return perksTab;
     }
 }
