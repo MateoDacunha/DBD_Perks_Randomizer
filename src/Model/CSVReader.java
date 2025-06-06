@@ -1,7 +1,7 @@
+package Model;
+
 import java.util.Scanner;
-import java.util.Arrays;
 import java.io.File;
-import java.io.IOException;
 import java.lang.Math;
 
 public class CSVReader{
@@ -10,7 +10,7 @@ public class CSVReader{
     private int NBPERKS;
     private int NBTYPEOFPERKS;
 
-    CSVReader(String filename,boolean isSurv){
+    public CSVReader(String filename,boolean isSurv){
         this.isSurv = isSurv;
         if (isSurv){
             NBPERKS = 152;

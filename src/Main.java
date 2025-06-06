@@ -1,3 +1,7 @@
+import Model.CSVReader;
+import Model.Perk;
+import View.Window;
+
 public class Main{
     public static void main(String args[]){
         //Get Surv Perks
@@ -9,6 +13,8 @@ public class Main{
         Perk[] killer = c.readPerk();
         // for (Perk p : killer){if (p!=null) System.out.println(p);}
 
-        Screen.demarrer();
+        
+
+        Window.demarrer();
     }
 }

@@ -1,3 +1,4 @@
+package Model;
 public class Perk{
     private String name;
     private String description;
