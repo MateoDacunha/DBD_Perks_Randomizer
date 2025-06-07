@@ -53,7 +53,7 @@ public class CSVReader{
                         tag += Math.pow(2,i);
                     }
                 }
-                perksTab[counter] = new Perk(name,null,tag,isSurv);
+                perksTab[counter] = new Perk(name,null,tag,isSurv,counter);
                 counter ++;
             }
         }

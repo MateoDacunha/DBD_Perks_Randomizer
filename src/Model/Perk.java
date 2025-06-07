@@ -2,17 +2,17 @@ package Model;
 public class Perk{
     private String name;
     private String description;
-    private int tag;
+    private int tag,id;
     private boolean isSurv;
 
     
 
-    Perk(String name,String description,int tag,boolean isSurv){
+    Perk(String name,String description,int tag,boolean isSurv,int id){
         this.name = name;
         this.description =description;
         this.tag = tag;
         this.isSurv = isSurv;
-
+        this.id = id;
     }
 
     public String get_name(){
@@ -25,6 +25,10 @@ public class Perk{
 
     public int get_tag(){
         return tag;
+    }
+
+    public int get_id(){
+        return id;
     }
 
     private String transform_tag(){
@@ -58,5 +62,9 @@ public class Perk{
     public String toString(){
         String res = name+"\n Tag : "+transform_tag();
         return res;
+    }
+
+    public static boolean isEqual(Perk p1,Perk p2){
+        return p1.get_name().equals(p2.get_name());
     }
 }
